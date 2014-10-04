@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>web sql test page</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="./webSQLParameter.js"></script>
+    <script src="./webSQL.js"></script>
+    <script>
+	    dbInit("keyValue");
+	    dbSetCustTable("keyValue", ['updateFlag', '1']); //insert
+		//dbUpdateCustTable("keyValue", ['3', 'updateFlag']); //update
+	    //dbAlterTable("keyValue"); //擴充表格欄位
+	    //dbDelCustTable("keyValue",['updateFlag']); //
+	    //dbGetCustTable("keyValue", ['updateFlag'], checkResult);
+	    dbQuery("SELECT j FROM keyValue", [], checkResult);
+	    
+	    function checkResult(tx, result){
+			console.log(result.rows.length);
+			console.log(result.rows.item(3).key);
+			console.log(result.rows.item(3).value);
+	    }
+
+	    //dbDropCustTable("keyValue");
+    </script>
+  </head>
+  <body>
+  	<h1>web sql test page</h1>
+  </body>
+</html>
