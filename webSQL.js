@@ -27,14 +27,14 @@ html5.webdb.onSuccess = function(tx, result) {
 	console.log(result);
 }
 
-//==============developer function area================
+//==============Operation function area================
 function dbInit(table) {
 	if(createTableObj[table] != undefined){
 		html5.webdb.open(database);
 		html5.webdb.queries(createTableObj[table], [], null);
 	}
 	else{
-		throw table+" undefined";
+		throw "GzFox websql : "+table+" undefined";
 	}
 }
 
@@ -51,7 +51,7 @@ function dbQuery(sql, dataSet, renderFuncs){
 		dataSet = [];
 	}
 	if(sql === undefined){
-		throw "sql sentence undefined";
+		throw "GzFox websql : sql sentence undefined";
 	}
 	html5.webdb.queries(sql, dataSet, renderFuncs);
 }
@@ -59,13 +59,13 @@ function dbQuery(sql, dataSet, renderFuncs){
 //select data with customize function
 function dbGetCustTable(table, dataSet, renderFuncs){
 	if(selectTableObj[table] === undefined){
-		throw table+" undefined";
+		throw "GzFox websql : "+table+" undefined";
 	}
 	if(dataSet === undefined){
-		throw dataSet+" undefined";
+		throw "GzFox websql : "+dataSet+" undefined";
 	}
 	if(renderFuncs === undefined){
-		throw renderFuncs+" undefined";
+		throw "GzFox websql : "+renderFuncs+" undefined";
 	}
 	html5.webdb.queries(selectTableObj[table], dataSet, renderFuncs);
 }
@@ -76,10 +76,10 @@ function dbSetCustTable(table, dataSet, renderFuncs){
 		renderFuncs = null;
 	}
 	if(dataSet === undefined){
-		throw dataSet+" undefined";
+		throw "GzFox websql : "+dataSet+" undefined";
 	}
 	if(insertTableObj[table] === undefined){
-		throw table+" undefined";
+		throw "GzFox websql : "+table+" undefined";
 	}
 	html5.webdb.queries(insertTableObj[table], dataSet, renderFuncs);
 }
@@ -90,10 +90,10 @@ function dbUpdateCustTable(table, dataSet, renderFuncs){
 		renderFuncs = null;
 	}
 	if(dataSet === undefined){
-		throw dataSet+" undefined";
+		throw "GzFox websql : "+dataSet+" undefined";
 	}
 	if(insertTableObj[table] === undefined){
-		throw table+" undefined";
+		throw "GzFox websql : "+table+" undefined";
 	}
 	html5.webdb.queries(updateTableObj[table], dataSet, renderFuncs);
 }
@@ -104,10 +104,10 @@ function dbDelCustTable(table, dataSet, renderFuncs){
 		renderFuncs = null;
 	}
 	if(dataSet === undefined){
-		throw dataSet+" undefined";
+		throw "GzFox websql : "+dataSet+" undefined";
 	}
 	if(insertTableObj[table] === undefined){
-		throw table+" undefined";
+		throw "GzFox websql : "+table+" undefined";
 	}
 	html5.webdb.queries(deleteTableObj[table], dataSet, renderFuncs);
 }
@@ -118,7 +118,7 @@ function dbDropCustTable(table, renderFuncs){
 		renderFuncs = null;
 	}
 	if(table === undefined){
-		throw table+" undefined";
+		throw "GzFox websql : "+table+" undefined";
 	}
 	sql = "DROP TABLE IF EXISTS " + table;
 	html5.webdb.queries(sql, [], renderFuncs);

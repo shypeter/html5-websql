@@ -7,18 +7,20 @@
     <script src="./webSQLParameter.js"></script>
     <script src="./webSQL.js"></script>
     <script>
+    
 	    dbInit("keyValue");
-	    dbSetCustTable("keyValue", ['updateFlag', '1']); //insert
+	    //dbSetCustTable("keyValue", ['updateFlag', '1']); //insert
 		//dbUpdateCustTable("keyValue", ['3', 'updateFlag']); //update
 	    //dbAlterTable("keyValue"); //擴充表格欄位
-	    //dbDelCustTable("keyValue",['updateFlag']); //
+	    dbDelCustTable("keyValue",['updateFlag']); //
 	    //dbGetCustTable("keyValue", ['updateFlag'], checkResult);
-	    dbQuery("SELECT j FROM keyValue", [], checkResult);
+	    dbQuery("SELECT * FROM keyValue", [], checkResult);
 	    
 	    function checkResult(tx, result){
-			console.log(result.rows.length);
-			console.log(result.rows.item(3).key);
-			console.log(result.rows.item(3).value);
+			if(result.rows.length != 0){
+				console.log(result.rows.item(3).key);
+				console.log(result.rows.item(3).value);	
+			}
 	    }
 
 	    //dbDropCustTable("keyValue");
