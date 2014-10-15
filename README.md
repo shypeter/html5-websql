@@ -5,7 +5,7 @@ It's a simple javascript library.
 How to use
 ===
 
-1.Initialize you database, first step is setting database info in 'webSQLParameter.js', example:
+1.Initialize your database, first step is setting database info in 'webSQLParameter.js', example:
 ```
 var database = "myDB";
 var dbSize = 40 * 1024 * 1024; //40MB
@@ -20,7 +20,7 @@ Go to websqlDemoEasy.html, and add two script files.
 <script src="./webSQLParameter.js"></script>
 <script src="./webSQL.js"></script>
 ```
-DB is Ready to use!
+Now DB is Ready to go!
 
 2.Insert data to database
 Specify table name to 'insertTableObj' object and sql statment in 'webSQLParameter.js'.
