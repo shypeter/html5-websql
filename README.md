@@ -20,6 +20,10 @@ Go to websqlDemoEasy.html, and add two script files.
 <script src="./webSQLParameter.js"></script>
 <script src="./webSQL.js"></script>
 ```
+and
+```
+dbInit("keyValue");
+```
 Now DB is Ready to go!
 
 2.Insert data to database
