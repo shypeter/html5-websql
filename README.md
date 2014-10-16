@@ -41,7 +41,7 @@ Specify table name to 'selectTableObj' object and sql statment in 'webSQLParamet
 ```
 selectTableObj['toDoList'] = "SELECT * FROM toDoList WHERE key LIKE ?";
 ```
-Then CustTable() in 'websqlDemoEasy.html'. you should setting 'table name','parament','call back function' , finally you get data from DB. 
+Then call 'dbGetCustTable()' in 'websqlDemoEasy.html'. you should setting 'table name','parament','call back function' , finally you get data from DB. 
 ```
 dbGetCustTable("keyValue", ['updateFlag'], function(tx, result){
 	if(result.rows.length != 0){
