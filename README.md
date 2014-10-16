@@ -26,7 +26,7 @@ dbInit("keyValue");
 ```
 Now DB is Ready to go!
 
-2.Insert data to database
+2.Insert data to DB.
 Specify table name to 'insertTableObj' object and sql statment in 'webSQLParameter.js'.
 ```
 insertTableObj['keyValue'] = "INSERT INTO keyValue (key, value) VALUES (?,?)";
@@ -36,7 +36,7 @@ Then call 'dbSetCustTable()' in 'webSQLParameter.js'
 dbSetCustTable("keyValue", ['updateFlag', '1']);
 ```
 
-3.Select data from statment.
+3.Select data from DB.
 Specify table name to 'selectTableObj' object and sql statment in 'webSQLParameter.js'.
 ```
 selectTableObj['toDoList'] = "SELECT * FROM toDoList WHERE key LIKE ?";
